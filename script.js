@@ -6,8 +6,8 @@ function createGrid() {
     for (let i = 0; i < (size*size); i++) {
         let square = document.createElement('div');
         let squareSize = document.querySelector('#grid').clientWidth / size;
-        square.style.width = squareSize-1 + 'px';
-        square.style.height = squareSize-1 + 'px';
+        square.style.width = squareSize + 'px';
+        square.style.height = squareSize + 'px';
         square.classList.add ('gridSquare');
         grid.appendChild(square);
     }

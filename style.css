@@ -3,10 +3,10 @@
     height: 600px;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
+    border: 2px solid red;
 }
 
 .gridSquare {
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+    border: 1px solid black;
+    box-sizing: border-box;
 }
