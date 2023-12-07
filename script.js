@@ -10,8 +10,22 @@ function createGrid(size=16) {
         let squareSize = document.querySelector('#grid').clientWidth / size;
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
-        square.classList.add ('gridSquare');
+        square.classList.add('gridSquare');
         grid.appendChild(square);
+
+
+
+        let isMouseDown;
+        document.addEventListener('mousedown', () => isMouseDown = true);
+        document.addEventListener('mouseup', () => isMouseDown = false);
+
+        document.querySelectorAll('.gridSquare').forEach(square => {
+            square.addEventListener('mouseover', () => {
+                if(isMouseDown) {
+                    square.style.backgroundColor = 'black';
+                }
+            })
+        })
     }
 }
 createGrid();
@@ -28,3 +42,4 @@ slider.addEventListener('input', () => {
     sizePara.innerText = `${size}x${size}`;
     createGrid(size);
 });
+
