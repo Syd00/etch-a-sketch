@@ -17,7 +17,7 @@ function createGrid(size=16) {
 createGrid();
 
 slider = document.querySelector('#myRange');
-slider.addEventListener('change', () => {
+slider.addEventListener('input', () => {
     let child = grid.lastElementChild;
     while(child) {
         grid.removeChild(child);
