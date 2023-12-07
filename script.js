@@ -1,6 +1,8 @@
-function createGrid() {
-    let size = document.querySelector('#myRange').value;
-    let grid = document.querySelector('#grid');
+const grid = document.querySelector('#grid');
+
+function createGrid(size=16) {
+    //let size = document.querySelector('#myRange').value;
+    //let grid = document.querySelector('#grid');
     
 
     for (let i = 0; i < (size*size); i++) {
@@ -13,3 +15,16 @@ function createGrid() {
     }
 }
 createGrid();
+
+slider = document.querySelector('#myRange');
+slider.addEventListener('change', () => {
+    let child = grid.lastElementChild;
+    while(child) {
+        grid.removeChild(child);
+        child = grid.lastElementChild;
+    }
+    size = slider.value;
+    sizePara = document.querySelector('#sizePara');
+    sizePara.innerText = `${size}x${size}`;
+    createGrid(size);
+});
