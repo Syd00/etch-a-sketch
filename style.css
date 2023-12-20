@@ -54,9 +54,24 @@ header {
 #penMode {
     width: 100%;
     text-align: center;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
     width: 50%;
     height: 60px;
+}
+
+#color {
+    width: 30%;
+    height: 50px;
+}
+
+#randomColor {
+    width: 30%;
+    height: 50px;
+    margin-right: 11vh;
 }

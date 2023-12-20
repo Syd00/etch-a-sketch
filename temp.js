@@ -1,6 +1,5 @@
 const grid = document.querySelector('#grid');
 
-
 function createGrid(size=16) {
     for (let i = 0; i < (size*size); i++) {
         let square = document.createElement('div');
@@ -19,11 +18,10 @@ document.addEventListener('mousedown', () => isMouseDown = true);
 document.addEventListener('mouseup', () => isMouseDown = false);
 
 function setColor() {
-    let color = document.querySelector('#color').value;
     document.querySelectorAll('.gridSquare').forEach(square => {
         square.addEventListener('mouseover', (e) => {
             if(isMouseDown) {
-                e.target.style.backgroundColor = `${color}`;
+                e.target.style.backgroundColor = `${document.querySelector('#color').value}`;
             }
         })
     })
